@@ -21,12 +21,13 @@ private:
 
 	Vec2 textPos;
 	Vec2 textPos2;
+	Vec2 textPos3;
 
 	LPCSTR font_path;
 
 	int titleFont;
 	int Font;
 
-
-
+	int select;
+	
 };
