@@ -19,5 +19,7 @@ private:
 	int numFontHandle[10];
 	int a[3];
 
+	int scoreBoardHandle;
+
 };
 
