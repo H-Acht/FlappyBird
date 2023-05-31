@@ -16,6 +16,7 @@ public:
 	//•\Ž¦ˆÊ’u
 	Vec2 m_pos;
 
+	bool gameOver;
 
 private:
 	
@@ -33,5 +34,9 @@ private:
 
 	int m_push;
 
+	int PL;
+	int playerAnimation;
+	float extend;
+	bool animationFlag;
 };
 
