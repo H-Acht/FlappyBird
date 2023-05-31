@@ -3,9 +3,10 @@
 
 Score::Score():
 	numFontHandle(),
-	a()
+	a(),
+	scoreBoardHandle(-1)
 {
-
+	scoreBoardHandle = LoadGraph("Data/Score/ScoreBoard.png");
 }
 
 Score::~Score()
@@ -14,6 +15,8 @@ Score::~Score()
 	{
 		DeleteGraph(numFontHandle[i]);
 	}
+	DeleteGraph(scoreBoardHandle);
+
 }
 
 void Score::Init()
@@ -28,15 +31,13 @@ void Score::Update(Block& block)
 	a[0] = (block.passCount % 10);			//1‚ÌˆÊ
 	a[1] = ((block.passCount / 10) % 10);	//10‚ÌˆÊ
 	a[2] = ((block.passCount / 100) % 10);	//100‚ÌˆÊ
-
 }
 
 void Score::Draw()
 {
-	DrawBox(800, 50, 1000, 150, GetColor(255, 100, 100), true);
-	DrawBox(800, 50, 1000, 150, GetColor(255,0,0), false);
+	DrawModiGraph(680, 40, 920, 40, 920, 155, 680, 155, scoreBoardHandle, true);
 
-	DrawRotaGraph(840, 100, 4.0, 0, numFontHandle[a[2]], true, false);
-	DrawRotaGraph(900, 100, 4.0, 0, numFontHandle[a[1]], true, false);
-	DrawRotaGraph(960, 100, 4.0, 0, numFontHandle[a[0]], true, false);
+	DrawRotaGraph(740, 100, 4.0, 0, numFontHandle[a[2]], true, false);
+	DrawRotaGraph(800, 100, 4.0, 0, numFontHandle[a[1]], true, false);
+	DrawRotaGraph(860, 100, 4.0, 0, numFontHandle[a[0]], true, false);
 }

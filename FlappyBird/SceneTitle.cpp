@@ -38,7 +38,7 @@ void SceneTitle::init()
 	Font = CreateFontToHandle("‚ ‚¸‚«ƒtƒHƒ“ƒg", 48, -1, -1);
 
 	textPos.x = 550;
-	textPos.y = 100;
+	textPos.y = 200;
 
 	textPos2.x = 750;
 	textPos2.y = 500;
