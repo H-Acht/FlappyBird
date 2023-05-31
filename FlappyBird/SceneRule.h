@@ -5,7 +5,7 @@ class SceneRule : public SceneBase
 {
 public:
 	SceneRule();
-	~SceneRule();
+	virtual ~SceneRule();
 
 	void Init();
 	void Update();
