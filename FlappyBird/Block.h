@@ -2,6 +2,12 @@
 #include "Vec2.h"
 #include "DxLib.h"
 
+namespace
+{
+	//ブロックの数
+	constexpr int num = 3;
+}
+
 class Block
 {
 public:
@@ -9,23 +15,13 @@ public:
 	virtual ~Block();
 
 	void Init();
-
-	/// <summary>
-	/// 難易度ノーマル
-	/// </summary>
 	void Update();
-
-	/// <summary>
-	/// 難易度ハード
-	/// </summary>
-	void Update2();
-	
 	void Draw();
 
-	float dLeft[2], dTop[2], dRight[2], dBottom[2];
-	float uLeft[2], uTop[2], uRight[2], uBottom[2];
+	float dLeft[3], dTop[3], dRight[3], dBottom[3];
+	float uLeft[3], uTop[3], uRight[3], uBottom[3];
 
-	bool blockFlag[2];
+	bool blockFlag[3];
 
 	int passCount;
 
@@ -39,10 +35,15 @@ private:
 	/// <param name="narrowness">隙間の狭さ</param>
 	void BlockUpdate(int i, int speed, int narrowness);
 
-	Vec2 m_pos[2];
+	Vec2 m_pos[3];
 
-	int pipeHandle;
+	int pipeHandle[15];
 
 	int m_timeCount;
+
+	int narrow;
+
+	bool passFlag;
 };
 
+//gitにこみっと
